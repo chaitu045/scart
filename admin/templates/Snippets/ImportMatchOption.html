@@ -1,0 +1,14 @@
+				<tr>
+					<td class="FieldLabel" style="width: auto;">
+						<span class="Required">{{ Required|raw }}</span>&nbsp;{{ FieldName|raw }}:
+					</td>
+					<td width="290">
+						<select name="{{ OptionName|raw }}" id="{{ FieldId|raw }}" class="Field250">
+							<option value="-1">Ignore</option>
+							{{ OptionList|raw }}
+						</select>
+						<img onmouseout="HideHelp('{{ HelpId|raw }}')" onmouseover="ShowHelp('{{ HelpId|raw }}', '{{ FieldNameHelpTitle|raw }}', '{{ FieldNameHelp|raw }}')" src="images/help.gif" width="24" height="16" border="0">
+						<div style="display:none" id="{{ HelpId|raw }}"></div>
+						{{ Extra|raw }}
+					</td>
+				</tr>

@@ -1,0 +1,36 @@
+<table>
+	<thead>
+		<tr>
+			<th class="First">&nbsp;</th>
+			<th class="Second LastPeriodStats" title="{{ LastPeriodDateRange|raw }}">{{ LastPeriodHeader|raw }}</th>
+			<th title="{{ ThisPeriodDateRange|raw }}">{{ ThisPeriodHeader|raw }}</th>
+			<th>% Change</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Revenue:</th>
+			<td class="First LastPeriodStats">{{ LastPeriodRevenue|raw }}</td>
+			<td>{{ ThisPeriodRevenue|raw }}</td>
+			<td class="PerformanceIndicator{{ TotalRevenueChangeClass|raw }}">{{ TotalRevenueChange|raw }}</td>
+		</tr>
+		<tr>
+			<th>New Orders:</th>
+			<td class="First LastPeriodStats">{{ LastPeriodNumOrders|raw }}</td>
+			<td>{{ ThisPeriodNumOrders|raw }}</td>
+			<td class="PerformanceIndicator{{ NumOrdersChangeClass|raw }}">{{ NumOrdersChange|raw }}</td>
+		</tr>
+		<tr style="{{ HideVisitorStats|raw }}">
+			<th>Visitors:</th>
+			<td class="First LastPeriodStats">{{ LastPeriodNumVisitors|raw }}</td>
+			<td>{{ ThisPeriodNumVisitors|raw }}</td>
+			<td class="PerformanceIndicator{{ NumVisitorsChangeClass|raw }}">{{ NumVisitorsChange|raw }}</td>
+		</tr>
+		<tr style="{{ HideConversionRate|raw }}">
+			<th>Conversion Rate:</th>
+			<td class="First LastPeriodStats">{{ LastPeriodConversionRate|raw }}%</td>
+			<td>{{ ThisPeriodConversionRate|raw }}%</td>
+			<td class="PerformanceIndicator{{ ConversionChangeClass|raw }}">{{ ConversionChange|raw }}</td>
+		</tr>
+	</tbody>
+</table>

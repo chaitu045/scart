@@ -1,0 +1,29 @@
+<div id="ModalTitle">{{ GiftWrappingTitle|raw }}</div>
+<form method="post" action="#" onsubmit="OrderManager.ApplyGiftWrapping(); return false;" id="GiftWrappingForm">
+	<input type="hidden" name="itemId" value="{{ ItemId|raw }}" />
+	<div id="ModalContent" style="overflow: auto;" class="{{ GiftWrapModalClass|raw }}">
+		<p class="InfoMessage">{% lang 'ChooseHowToWrapItems' %}</p>
+
+		<div style="{{ HideSplitWrappingOptions|raw }}">
+			<label style="margin-bottom: 10px;">
+			<input type="radio" name="giftwraptype" value="same" onclick="Order.ToggleMultiWrapping(this.value)" checked="checked" /> {% lang 'WrapItemsTheSame' %}
+		</label>
+		</div>
+		<div class="WrappingOptionsSingle">
+			{{ GiftWrappingOptionsSingle|raw }}
+		</div>
+
+		<div style="margin-bottom: 10px; margin-top: 10px; {{ HideSplitWrappingOptions|raw }}">
+			<label style='margin-bottom: 10px;'>
+				<input type="radio" name="giftwraptype" value="different" onclick="Order.ToggleMultiWrapping(this.value)" /> {% lang 'WrapItemsDifferently' %}
+			</label>
+			<div class="WrappingOptionsMultiple" style="display: none;">
+				{{ GiftWrappingOptions|raw }}
+			</div>
+		</div>
+	</div>
+	<div id="ModalButtonRow">
+		<input type="button" class="Button" value="{% lang 'Cancel' %}" onclick="$.modal.close();" />
+		<input class="Submit" class="Submit" type="submit" value="{% lang 'Save' %}" />
+	</div>
+</form>

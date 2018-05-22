@@ -1,0 +1,79 @@
+<div class="Heading1">{% lang 'Home' %}</div>
+{{ Messages|raw }}
+<div class="DashboardRightColumn">
+	<div class="DashboardPanel DashboardPanelCurrentNotifications" style="{{ HideNotificationsList|raw }}">
+		<div class="DashboardPanelContent">
+			<h3>{% lang 'PendingItems' %}</h3>
+			<ul>
+				{{ NotificationsList|raw }}
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="DashboardLeftColumn">
+	<div class="DashboardPanel DashboardPanelFeatured DashboardPanelGettingStarted">
+		<div class="DashboardPanelContent">
+			<a href="#" class="ToggleLink GettingStartedToggleLink" style="{{ HideToggleGettingStartedAtGlance|raw }}">{% lang 'SwitchToCommonTasks' %}</a>
+			<h3>{% lang 'GettingStartedIntro' %}</h3>
+			<table class="WizardContent">
+				<tr>
+					<td class="ConfigureStoreSettings {{ CompletedStepSettingsClass|raw }}">
+						<a href="index.php?ToDo=viewSettings&wizard=1">{% lang 'GettingStartedStoreSettings' %}</a>
+						<div>{% lang 'GettingStartedStoreSettingsDesc' %}</div>
+						<div style="{{ HideCompletedStepSettings|raw }}" class="Completed">{% lang 'StepCompleted' %}</div>
+					</td>
+					<td class="DesignYourStore {{ CompletedStepDesignClass|raw }}">
+						<a href="index.php?ToDo=viewTemplates&wizard=1">{% lang 'GettingStartedDesignStore' %}</a>
+						<div>{% lang 'GettingStartedDesignStoreDesc' %}</div>
+						<div style="{{ HideCompletedStepDesign|raw }}" class="Completed">{% lang 'StepCompleted' %}</div>
+					</td>
+					<td class="AddProducts {{ CompletedStepProductsClass|raw }} Last">
+						<a href="index.php?ToDo=addProduct&wizard=1">{% lang 'GettingStartedAddProducts' %}</a>
+						<div>{% lang 'GettingStartedAddProductsDesc' %}</div>
+						<div style="{{ HideCompletedStepProducts|raw }}" class="Completed">{% lang 'StepCompleted' %}</div>
+					</td>
+				</tr>
+				<tr class="Last">
+					<td class="PaymentMethods {{ CompletedStepPaymentMethodsClass|raw }}">
+						<a href="index.php?ToDo=viewCheckoutSettings&wizard=1">{% lang 'GettingStartedPaymentMethods' %}</a>
+						<div>{% lang 'GettingStartedPaymentMethodsDesc' %}</div>
+						<div style="{{ HideCompletedStepPaymentMethods|raw }}" class="Completed">{% lang 'StepCompleted' %}</div>
+					</td>
+					<td class="TaxSettings  {{ CompletedStepTaxSettingsClass|raw }}">
+						<a href="index.php?ToDo=viewTaxSettings&wizard=1">{% lang 'GettingStartedTaxSettings' %}</a>
+						<div>{% lang 'GettingStartedTaxSettingsDesc' %}</div>
+						<div style="{{ HideCompletedStepTaxSettings|raw }}" class="Completed">{% lang 'StepCompleted' %}</div>
+					</td>
+					<td class="ShippingOptions  {{ CompletedStepShippingOptionsClass|raw }} Last">
+						<a href="index.php?ToDo=viewShippingSettings&wizard=1">{% lang 'GettingStartedShippingOptions' %}</a>
+						<div>{% lang 'GettingStartedShippingOptionsDesc' %}</div>
+						<div style="{{ HideCompletedStepShippingOptions|raw }}" class="Completed">{% lang 'StepCompleted' %}</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="DashboardPanel DashboardPanelHelpArticles" style="{{ HidePopularHelpArticles|raw }}">
+		<div class="DashboardPanelContent" style="overflow: auto">
+			<form action="{{ SearchKnowledgeBaseUrl|raw }}" method="post" class="DashboardHelpArticlesSearchForm" style="{{ HideSearchKnowledgeBase|raw }}">
+				<input type="text" name="q" class="DashboardHelpSearchQuery DashboardHelpSearchHasImage" />
+				<span class="DashboardActionButton">
+					<a href="#">
+						<span class="ButtonText">{% lang 'Go' %}</span>
+					</a>
+				</span>
+			</form>
+			<h3>{% lang 'PopularHelpArticles' %}</h3>
+			<div class="HelpArticlesList">
+				<img src="images/ajax-loader.gif" alt="" />
+			</div>
+			<span class="DashboardActionButton DashboardBrowseAllHelpArticlesButton">
+				<a href="{{ ViewKnowledgeBaseLink|raw }}">
+					<span class="ButtonArrow"></span>
+					<span class="ButtonText ButtonTextWithArrow">{% lang 'ViewKnowledgeBase' %}</span>
+				</a>
+			</span>
+		</div>
+	</div>
+</div>

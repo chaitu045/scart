@@ -1,0 +1,43 @@
+<tr class="ConfigField" id="productFieldTR_{{ ProductFieldKey|raw }}">
+	<td VALIGN="TOP"  class="FieldLabel">
+		<span style="margin-left:10px;">
+			 {% lang 'ConfigurableField' %} #<span class="FieldNumber">{{ ProductFieldNumber|raw }}</span>:
+		</span>
+	</td>
+	<td>
+		<select name="productFieldType[{{ ProductFieldKey|raw }}]" class="productFieldType Field80" onchange="ToggleFieldFileType(this.value, {{ ProductFieldKey|raw }})">
+			<option value="text" {{ ProductFieldTypeText|raw }}>{% lang 'ShortText' %}</option>
+			<option value="textarea" {{ ProductFieldTypeTextarea|raw }}>{% lang 'Textarea' %}</option>
+			<option value="file" {{ ProductFieldTypeFile|raw }}>{% lang 'File' %}</option>
+			<option value="checkbox" {{ ProductFieldTypeCheckbox|raw }}>{% lang 'Checkbox' %}</option>
+			<option value="select" {{ ProductFieldTypeSelect|raw }}>{% lang 'SelectBox' %}</option>
+		</select>
+	</td>
+	<td>
+		<input name="productFieldName[{{ ProductFieldKey|raw }}]" value="{{ ProductFieldName|raw }}"  class="productFieldName Field100 {{ FieldNameClass|raw }}" onfocus = "HideFieldHelpText(this);" onblur = "ShowFieldHelpText(this, '{% lang 'FieldName' %}');"/>
+		<input name="productFieldId[{{ ProductFieldKey|raw }}]" value="{{ ProductFieldId|raw }}"  class="productFieldId" type="hidden" />
+	</td>
+	<td>
+		<input class="productFieldRequired" name="productFieldRequired[{{ ProductFieldKey|raw }}]" id="productFieldRequired_{{ ProductFieldKey|raw }}" type="checkbox" style="margin-right:15px;" {{ ProductFieldRequired|raw }} /><label for="productFieldRequired_{{ ProductFieldKey|raw }}">{% lang 'Required' %}?</label>
+	</td>
+	<td>
+		<div style="{{ HideFieldFileType|raw }}" id="FileTypeContainer_{{ ProductFieldKey|raw }}">
+			<input name="productFieldFileType[{{ ProductFieldKey|raw }}]" value="{{ ProductFieldFileType|raw }}" size="12"  class="productFieldFileType Field80  {{ FileTypeClass|raw }}"  onfocus = "HideFieldHelpText(this);" onblur = "ShowFieldHelpText(this, '{% lang 'FieldFileType' %}');" />
+			<img onmouseout="HideHelp('FileTypeHelp_{{ ProductFieldKey|raw }}');" onmouseover="ShowHelp('FileTypeHelp_{{ ProductFieldKey|raw }}', '{% lang 'FieldFileType' %}', '{% lang 'FieldFileTypeHelp' %}')" src="images/help.gif" width="24" height="16" border="0" style="margin-top: 5px;" />
+			<div style="display:none" id="FileTypeHelp_{{ ProductFieldKey|raw }}"></div>
+
+			<input name="productFieldFileSize[{{ ProductFieldKey|raw }}]" value="{{ ProductFieldFileSize|raw }}" size ="4"  class="productFieldFileSize Field50  {{ FileSizeClass|raw }}"  onfocus = "HideFieldHelpText(this);"   onblur = "ShowFieldHelpText(this, '{% lang 'FieldFileSize' %}');" /> KB
+			<img onmouseout="HideHelp('FileSizeHelp_{{ ProductFieldKey|raw }}');" onmouseover="ShowHelp('FileSizeHelp_{{ ProductFieldKey|raw }}', '{% lang 'FieldFileSize' %}', '{% lang 'FieldFileSizeHelp' %}')" src="images/help.gif" width="24" height="16" border="0" style="margin-top: 5px;" />
+			<div style="display:none" id="FileSizeHelp_{{ ProductFieldKey|raw }}"></div>
+		</div>
+		<div style="{{ HideFieldSelectOptions|raw }}" id="SelectOptionsContainer_{{ ProductFieldKey|raw }}">
+			<input name="productFieldSelectOptions[{{ ProductFieldKey|raw }}]" value="{{ ProductFieldSelectOptions }}" class="productFieldSelectOptions Field150  {{ SelectOptionsClass|raw }}"  onfocus = "HideFieldHelpText(this);" onblur = "ShowFieldHelpText(this, '{% lang 'FieldSelectOptions' %}');" />
+			<img onmouseout="HideHelp('SelectOptionsHelp_{{ ProductFieldKey|raw }}');" onmouseover="ShowHelp('SelectOptionsHelp_{{ ProductFieldKey|raw }}', '{% lang 'FieldSelectOptions' %}', '{% lang 'FieldSelectOptionsHelp' %}')" src="images/help.gif" width="24" height="16" border="0" style="margin-top: 5px;" />
+			<div style="display:none" id="SelectOptionsHelp_{{ ProductFieldKey|raw }}"></div>
+		</div>
+	</td>
+	<td align="left"  style="width: 50px;">
+		<a href="#" onclick="return AddProductField({{ ProductFieldKey|raw }});"><img src="images/addicon.gif" alt="Add" border="0"  /></a>
+		<a href="#" onclick="return DelProductField({{ ProductFieldKey|raw }});" style="display: {{ HideProductFieldDelete|raw }};"><img src="images/delicon.gif" alt="Del" border="0" /></a>
+	</td>
+</tr>

@@ -1,0 +1,16 @@
+<input type="hidden" name="existing_categories_{{ ProductId|raw }}" id="existing_categories_{{ ProductId|raw }}" value="{{ ProductExistingCategories|raw }}" />
+<input type="hidden" name="existing_brand_{{ ProductId|raw }}" id="existing_brand_{{ ProductId|raw }}" value="{{ ProductExistingBrand|raw }}" />
+<input type="hidden" name="existing_brand_id_{{ ProductId|raw }}" id="existing_brand_id_{{ ProductId|raw }}" value="{{ ProductExistingBrandId|raw }}" />
+<tr onmouseout="this.className='GridRow'" onmouseover="this.className='GridRowOver'" class="GridRow" style="height:25px">
+	<td valign="top" align="center" style="width: 18px;"><img width="16" height="16" src="images/product.gif"/></td>
+	<td valign="top"><input type="text" class="Field150" value="{{ ProductName|raw }}" name="prodname_{{ ProductId|raw }}" id="prodname_{{ ProductId|raw }}" style="width:95%" /></td>
+	<td valign="top">{{ CurrencyTokenLeft|raw }} <input type="text" class="Field50" value="{{ ProductPrice|raw }}" name="prodprice_{{ ProductId|raw }}" id="prodprice_{{ ProductId|raw }}" /> {{ CurrencyTokenRight|raw }}</td>
+	<td valign="top">
+		<div id="category_{{ ProductId|raw }}" class="categoryPicker Field150" style="overflow: auto; height: 50px; float: left;"></div>
+		<a style="float: left;" title="{% lang 'ClickToExpandCategories' %}" href="#" onclick="ExpandCategories({{ ProductId|raw }}); return false;" class="ExpandCategoryLink" id="ExpandCategoryLink-{{ ProductId|raw }}"><img id="catdrop_{{ ProductId|raw }}" src="images/droparrow.gif" width="10" height="5" style="padding-top:8px" border="0" /></a>
+	</td>
+	<td valign="top"><input type="text" class="Field50" value="{{ ProductBrand|raw }}" name="prodbrand_{{ ProductId|raw }}" id="prodbrand_{{ ProductId|raw }}" /></td>
+	<td valign="top"><input type="checkbox" {{ ProductVisible|raw }} value="ON" name="prodvisible_{{ ProductId|raw }}" id="prodvisible_{{ ProductId|raw }}" /></td>
+	<td valign="top"><input type="checkbox" {{ ProductFeatured|raw }} value="ON" name="prodfeatured_{{ ProductId|raw }}" id="prodfeatured_{{ ProductId|raw }}" /></td>
+	<td valign="top"><input type="checkbox" {{ ProductFreeShipping|raw }} value="ON" name="prodfreeshipping_{{ ProductId|raw }}" id="prodfreeshipping_{{ ProductId|raw }}" /></td>
+</tr>

@@ -1,0 +1,14 @@
+<li style="width: {{ GraphItemWidth|raw }}%" title="{{ GraphDateTitle|raw }}" class="{{ GraphRangeLabelClass|raw }}">
+	<div style="{{ HideInsideRangeLabels|raw }}" class="InsideRangeLabel">
+		<em>{{ GraphDataRevenue|raw }} ({{ GraphDataNumOrders|raw }})</em>
+		<span>
+			{{ GraphDateLabel|raw }}
+		</span>
+	</div>
+	<div style="{{ HideOutsideRangeLabels|raw }}" class="OutsideRangeLabel">
+		<span>
+			{{ GraphDateLabel|raw }}
+		</span>
+		<em>{{ GraphDataRevenue|raw }} ({{ GraphDataNumOrders|raw }})</em>
+	</div>
+</li>

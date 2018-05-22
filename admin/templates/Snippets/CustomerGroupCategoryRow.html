@@ -1,0 +1,27 @@
+<div id="categoryRule{{ CategoryId|raw }}" class="catRules">
+	{% lang 'ForThisProduct1' %}
+
+	<a href="#" onclick="ShowCategorySelector({{ CategoryId|raw }}); return false;">{% lang 'ForThisCategory' %} (<span id="categoryRuleName{{ CategoryId|raw }}">{{ SelectedItemName|raw }}</span>)</a>
+
+	<input class="catRulesCategoryId" type="hidden" id="categoryRuleValue{{ CategoryId|raw }}" value="{{ CatOrProdId|raw }}" onchange="remapHiddenDiscounts('category', {{ CategoryId|raw }});" />	<input class="catRulesCategoryId" type="hidden" id="categoryRuleValue{{ CategoryId|raw }}" value="{{ CatOrProdId|raw }}" onchange="remapHiddenDiscounts('category', {{ CategoryId|raw }});" />
+	{% lang 'CustomersReceiveA' %}
+
+	<span id="categoryDiscountRulesAmountPrefix{{ CategoryId|raw }}">{{ AmountPrefix|raw }}</span>
+	<input class="catRulesDiscount Field50" id="categoryRuleDiscount{{ CategoryId|raw }}" type="text" value="{{ DiscountAmount|raw }}" class="Field50" style="width:30px" onchange="remapHiddenDiscounts('category', {{ CategoryId|raw }});" />
+	<span id="categoryDiscountRulesAmountPostfix{{ CategoryId|raw }}">{{ AmountPostfix|raw }}</span>
+
+	<select id="categoryDiscountMethod{{ CategoryId|raw }}" class="Field120" onchange="ToggleDiscountRateValueType({{ CategoryId|raw }}, 'category');">
+		<option value="price" {{ DiscountMethodPrice|raw }}>{% lang 'PriceDiscount' %}</option>
+		<option value="percent" {{ DiscountMethodPercent|raw }}>{% lang 'PercentageDiscount' %}</option>
+		<option value="fixed" {{ DiscountMethodFixed|raw }}>{% lang 'FixedPrice' %}</option>
+	</select>
+
+	<span id="categoryDiscountRulesLineEnding{{ CategoryId|raw }}"> {% lang 'For' %} </span>
+	<select id="categoryRuleAppliesTo{{ CategoryId|raw }}" onchange="remapHiddenDiscounts('category', {{ CategoryId|raw }});">
+		<option value="CATEGORY_ONLY" {{ DiscountCatTypeCat|raw }}>{% lang 'ProductsInThisCategory' %}</option>
+		<option value="CATEGORY_AND_SUBCATS" {{ DiscountCatTypeCatAndSub|raw }}>{% lang 'ProductsInThisCategory2' %}</option>
+	</select>
+
+	<img title="{% lang 'AddAnotherCategoryDiscount' %}" style="cursor:pointer" src="images/addicon.gif" width="16" height="16" onclick="addDiscountRule('category');" />
+	<img title="{% lang 'RemoveThisCategoryDiscount' %}" style="cursor:pointer" src="images/delicon.gif" width="16" height="16" onclick="removeDiscountRule('category', {{ CategoryId|raw }})" />
+</div>

@@ -1,0 +1,24 @@
+					<tr id="discountRulesTR_{{ DiscountRulesKey|raw }}" class="DiscountRulesTR">
+						<td class="FieldLabel MediumFieldLabel">
+							&nbsp;&nbsp;&nbsp;<span id="discountRulesFieldLabel_{{ DiscountRulesKey|raw }}">{{ DiscountRulesLabel|raw }}</span>:
+						</td>
+						<td>
+							{% lang 'DiscountRulesBetween' %}
+							<input type="text" id="discountRulesQuantityMin_{{ DiscountRulesKey|raw }}" name="discountRulesQuantityMin[{{ DiscountRulesKey|raw }}]" class="Field50" value="{{ DiscountRulesQuantityMin|raw }}">
+							{% lang 'LittleAnd' %}
+							<input type="text" id="discountRulesQuantityMax_{{ DiscountRulesKey|raw }}" name="discountRulesQuantityMax[{{ DiscountRulesKey|raw }}]" class="Field50" value="{{ DiscountRulesQuantityMax|raw }}">
+							{% lang 'DiscountRulesReceive' %}
+							<select id="discountRulesType_{{ DiscountRulesKey|raw }}" name="discountRulesType[{{ DiscountRulesKey|raw }}]" class="Field120" onchange="ToggleDiscountRateValueType({{ DiscountRulesKey|raw }});">
+								<option value="price" {{ DiscountRulesTypePriceSelected|raw }}>{% lang 'DiscountRulesTypePrice' %}</option>
+								<option value="percent" {{ DiscountRulesTypePercentSelected|raw }}>{% lang 'DiscountRulesTypePercent' %}</option>
+								<option value="fixed" {{ DiscountRulesTypeFixedSelected|raw }}>{% lang 'DiscountRulesTypeFixed' %}</option>
+							</select>
+							{% lang 'LittleOf' %}
+							<span id="discountRulesAmountPrefix_{{ DiscountRulesKey|raw }}">{{ DiscountRulesAmountPrefix|raw }}</span>
+							<input type="text" id="discountRulesAmount_{{ DiscountRulesKey|raw }}" name="discountRulesAmount[{{ DiscountRulesKey|raw }}]" class="Field50" value="{{ DiscountRulesAmount|raw }}">
+							<span id="discountRulesAmountPostfix_{{ DiscountRulesKey|raw }}">{{ DiscountRulesAmountPostfix|raw }}</span>
+							<span id="discountRulesLineEnding_{{ DiscountRulesKey|raw }}">{{ DiscountRulesLineEnding|raw }}</span>
+							<a href="#" id="discountRulesAdd_{{ DiscountRulesKey|raw }}" onclick="AddDiscountRules(this.parentNode.parentNode); return false;"><img src="images/addicon.gif" alt="Add" border="0" /></a>
+							<a href="#" id="discountRulesDel_{{ DiscountRulesKey|raw }}" onclick="DelDiscountRules(this.parentNode.parentNode); return false;"><img src="images/delicon.gif" alt="Del" border="0" /></a>
+						</td>
+					</tr>

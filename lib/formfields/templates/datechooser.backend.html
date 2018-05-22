@@ -1,0 +1,72 @@
+
+<div id="div0" class="FormFieldTabs">
+	<dl>
+		<dt><span class="Required">*</span> {% lang 'FormFieldSetupName' %}:</dt>
+		<dd>
+			<input type="text" id="FormFieldName" name="name" value="{{ FormFieldName|raw }}" class="Field200" />
+		</dd>
+
+		<dt>&nbsp;&nbsp; {% lang 'FormFieldSetupDefaultValue' %}:</dt>
+		<dd>
+			<select id="FormFieldDefaultValueMonth" name="defaultvaluemonth">
+				{{ FormFieldDateDefaultValueMonths|raw }}
+			</select>
+			<select id="FormFieldDefaultValueDay" name="defaultvalueday">
+				{{ FormFieldDateDefaultValueDays|raw }}
+			</select>
+			<select id="FormFieldDefaultValueYear" name="defaultvalueyear">
+				{{ FormFieldDateDefaultValueYears|raw }}
+			</select>
+			<a href="#" onclick="FormFieldAdmin.SetToday('DefaultValue'); return false;">{% lang 'Today' %}</a>
+			<br class="Clear" />
+		</dd>
+
+		<dt>&nbsp;&nbsp; {% lang 'FormFieldSetupDateRange' %}:</dt>
+		<dd>
+			<select id="FormFieldLimitFromMonth" name="limitfrommonth">
+				{{ FormFieldDateLimitFromMonths|raw }}
+			</select>
+			<select id="FormFieldLimitFromDay" name="limitfromday">
+				{{ FormFieldDateLimitFromDays|raw }}
+			</select>
+			<select id="FormFieldLimitFromYear" name="limitfromyear">
+				{{ FormFieldDateLimitFromYears|raw }}
+			</select>
+			 to <img onmouseout="HideHelp('ddaterange');" onmouseover="ShowHelp('ddaterange', '{% lang 'FormFieldSetupDateRange' %}', '{% lang 'FormFieldSetupDateRangeHelp' %}')" src="images/help.gif" width="24" height="16" border="0" />
+			<div style="display:none" id="ddaterange"></div><br />
+			<select id="FormFieldLimitToMonth" name="limittomonth">
+				{{ FormFieldDateLimitToMonths|raw }}
+			</select>
+			<select id="FormFieldLimitToDay" name="limittoday">
+				{{ FormFieldDateLimitToDays|raw }}
+			</select>
+			<select id="FormFieldLimitToYear" name="limittoyear">
+				{{ FormFieldDateLimitToYears|raw }}
+			</select>
+			<br class="Clear" />
+		</dd>
+
+		<dt>&nbsp;&nbsp; {% lang 'FormFieldSetupIsRequired' %}:</dt>
+		<dd>
+			<label for="FormFieldIsRequired"><input type="checkbox" id="FormFieldIsRequired" name="isRequired" {{ FormFieldIsRequiredChecked|raw }} {{ FormFieldImmutableFlag|raw }} /> {% lang 'FormFieldSetupIsRequiredYes' %}</label>
+		</dd>
+	</dl>
+</div>
+
+<div id="div1" class="FormFieldTabs">
+	<dl>
+		<dt>&nbsp;&nbsp; {% lang 'FormFieldSetupClass' %}:</dt>
+		<dd>
+			<input type="text" id="FormFieldClass" name="class" value="{{ FormFieldClass|raw }}" class="extraInfo Field200" />
+			<img onmouseout="HideHelp('dclass');" onmouseover="ShowHelp('dclass', '{% lang 'FormFieldSetupClass' %}', '{% lang 'FormFieldSetupClassHelp' %}')" src="images/help.gif" width="24" height="16" border="0" />
+			<div style="display:none" id="dclass"></div>
+		</dd>
+
+		<dt>&nbsp;&nbsp; {% lang 'FormFieldSetupStyle' %}:</dt>
+		<dd>
+			<input type="text" id="FormFieldStyle" name="style" value="{{ FormFieldStyle|raw }}" class="extraInfo Field200" />
+			<img onmouseout="HideHelp('dstyle');" onmouseover="ShowHelp('dstyle', '{% lang 'FormFieldSetupStyle' %}', '{% lang 'FormFieldSetupStyleHelp' %}')" src="images/help.gif" width="24" height="16" border="0" />
+			<div style="display:none" id="dstyle"></div>
+		</dd>
+	</dl>
+</div>

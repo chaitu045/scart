@@ -1,0 +1,5 @@
+<li class="unselectedVideo videoRow">
+	<a href="#" class="viewYouTubeVideo"><img src='{{ videoImage|raw }}' class="ytVideoImage" id="{{ videoId|raw }}" title="{{ videoTitleFull|raw }}" /></a>
+	<div class="ytVideoTitle"><span class="videoTitleText" title="{{ videoTitleFull|raw }}">{{ videoTitle|raw }}</span> (<span class="ytVideoLength">{{ videoLength|raw }}</span>)</div>
+	<div class="ytVideoDetails">{{ videoViews|raw }} {% lang 'VideoViews' %} {{ videoRating|raw }}<br /><span title="{{ videoSummaryFull|raw }}">{{ videoSummary|raw }}</span></div>
+</li>

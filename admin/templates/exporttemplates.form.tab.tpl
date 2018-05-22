@@ -1,0 +1,1 @@
+<li><a href="#" id="tab{{ FileIndex|raw }}" onclick="ShowTab({{ FileIndex|raw }})" {{ TabDisplay|raw }}>{{ TypeTitle|raw }}</a></li>
